@@ -1,0 +1,22 @@
+{
+  "name": "ezdjs",
+  "version": "1.0.0",
+  "description": "makes making a js discord bot easy",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrEggoXYZ/ezdjs.git"
+  },
+  "author": "Mr Eggo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrEggoXYZ/ezdjs/issues"
+  },
+  "homepage": "https://github.com/MrEggoXYZ/ezdjs#readme",
+  "dependencies": {
+    "discord.js": "^13.1.0"
+  }
+}
