@@ -1,5 +1,5 @@
 const discord = require('discord.js');
-const client = new discord.client({ intents: []});
+const client = new discord.Client({ intents: []});
 
 function newBot(token) {
     if (!token) throw new Error('no token was provided');
@@ -8,10 +8,12 @@ function newBot(token) {
         console.log('bot is online');
     });
 
-    client.login(token)
+    client.login(token);
 }
 
 function cmdHandler(prefix) {
+    if (!prefix) throw new Error('no prefix was provided');
+
     client.on('messageCreate', message => {
         if (!message.content.startsWith(prefix) || message.author.bot) return;
 
@@ -20,8 +22,22 @@ function cmdHandler(prefix) {
     });
 }
 
+function messageCommand(commandName, message) {
+    if (command === commandName) {
+        message.channel.send(message);
+    }
+}
+
+function replyMessageCommand(commandName, replyMessage) {
+    if (command === commandName) {
+        message.reply(replyMessage);
+    }
+}
+
 
 module.exports = {
     newBot,
-    cmdHandler
+    cmdHandler,
+    messageCommand,
+    replyMessageCommand
 }
