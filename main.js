@@ -22,14 +22,14 @@ function cmdHandler(prefix) {
     });
 }
 
-function messageCommand(commandName, message) {
-    if (command === commandName) {
+function messageCommand(commandName, alias, message) {
+    if (command === commandName || command === alias) {
         message.channel.send(message);
     }
 }
 
 function replyMessageCommand(commandName, replyMessage) {
-    if (command === commandName) {
+    if (command === commandName || command === alias) {
         message.reply(replyMessage);
     }
 }
